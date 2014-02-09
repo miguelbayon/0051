@@ -185,4 +185,20 @@ public class MusicOrganizer
             addTrack(track);
         }
     }
+    
+    public void setYearOfTrack(int index, int year)
+    {
+        if (index >= 0 && index < tracks.size()) {
+            tracks.get(index).setYear(year);
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

@@ -13,7 +13,11 @@ public class Track
     private String title;
     // Where the track is stored.
     private String filename;
+    // Contador de reproducciones
     private int playCount;
+    // Año en el que se publico
+    private int year;
+    
     
     /**
      * Constructor for objects of class Track.
@@ -25,6 +29,7 @@ public class Track
     {
         setDetails(artist, title, filename);
         playCount = 0;
+        year = 0;
     }
     
     /**
@@ -37,6 +42,7 @@ public class Track
     {
         setDetails("unknown", "unknown", filename);
         playCount = 0;
+        year = 0;
     }
     
     /**
@@ -72,7 +78,7 @@ public class Track
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + ") - Reproducciones:" + playCount;
+        return artist + ": " + title + "  (file: " + filename + ") - Reproducciones:" + playCount + " - Año: " + year;
     }
     
     /**
@@ -96,7 +102,23 @@ public class Track
     public void incrementPlayCount() 
     {
         playCount++;
+    }   
+    
+    public int getYear() 
+    {
+        return year;
     }
+    
+    public void setYear(int year) 
+    {
+        this.year = year;
+    }
+    
+    
+    
+    
+    
+    
     
     
 }
