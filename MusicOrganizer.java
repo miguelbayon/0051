@@ -106,6 +106,19 @@ public class MusicOrganizer
         }
     }
     
+    
+    public void findInTitle(String title) 
+    {
+        for (Track track : tracks) {
+            String actualTitle = track.getTitle();
+            if (actualTitle.contains(title)) {
+                System.out.println(track.getDetails());
+            }
+        }
+        
+    }
+    
+    
     /**
      * Remove a track from the collection.
      * @param index The index of the track to be removed.
