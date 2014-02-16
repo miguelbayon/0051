@@ -269,6 +269,29 @@ public class MusicOrganizer
         }
     }
     
+    public void playShuffle2() 
+    {
+        ArrayList<Track> copia = new ArrayList<>();
+        copia = (ArrayList)tracks.clone();       
+        
+        int numeroDeCancionesReproducidas = 0;
+        while (numeroDeCancionesReproducidas < tracks.size()) {
+            // Elijo un numero aleatorio entre las canciones que me quedan por reproducir
+            Random aleatorio = new Random();
+            int numeroAleatorio = aleatorio.nextInt(copia.size());
+            
+            // Selecciono la cancion elegida, le aumento el contador, la reproduzco,
+            // muestro por pantalla sus detalles y la borro de mi ArrayList copia
+            Track track = copia.get(numeroAleatorio);
+            track.incrementPlayCount();
+            System.out.println("Sonando actualmente: " + track.getDetails());
+            player.playSample(track.getFilename());
+            copia.remove(numeroAleatorio);
+            
+            numeroDeCancionesReproducidas++;            
+        }
+    }
+    
     
     
     
