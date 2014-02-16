@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Random;
+import java.util.Collections;
 
 /**
  * A class to hold details of audio tracks.
@@ -258,6 +259,15 @@ public class MusicOrganizer
         playTrack(numeroAleatorio);
     }
     
+    public void playShuffle() 
+    {
+        Collections.shuffle(tracks);
+        for (Track track : tracks) {
+            track.incrementPlayCount();
+            System.out.println("Sonando actualmente: " + track.getDetails());
+            player.playSample(track.getFilename());
+        }
+    }
     
     
     
